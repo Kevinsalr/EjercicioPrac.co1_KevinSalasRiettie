@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="layout/base :: layout(~{::body})">
+
+<body>
+
+<h1 class="text-center">Bienvenido al Salón Glamour</h1>
+
+<p class="text-center">
+    Sistema de gestión de categorías, servicios y reservas.
+</p>
+
+<div class="text-center mt-4">
+    <a class="btn btn-primary me-2" th:href="@{/categorias}">Gestionar Categorías</a>
+    <a class="btn btn-success me-2" th:href="@{/servicios}">Gestionar Servicios</a>
+    <a class="btn btn-warning" th:href="@{/reservas}">Gestionar Reservas</a>
+</div>
+
+</body>
+</html>

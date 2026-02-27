@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="layout/base :: layout(~{::body})">
+
+<body>
+
+<h2>Lista de Categorías</h2>
+
+<a class="btn btn-primary mb-3" th:href="@{/categorias/nueva}">
+    Nueva Categoría
+</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="cat : ${categorias}">
+            <td th:text="${cat.id}"></td>
+            <td th:text="${cat.nombre}"></td>
+            <td>
+                <a class="btn btn-warning btn-sm"
+                   th:href="@{'/categorias/editar/' + ${cat.id}}">Editar</a>
+
+                <a class="btn btn-danger btn-sm"
+                   th:href="@{'/categorias/eliminar/' + ${cat.id}}">Eliminar</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
