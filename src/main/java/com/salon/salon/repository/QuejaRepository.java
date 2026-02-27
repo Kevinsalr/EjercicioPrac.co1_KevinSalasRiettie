@@ -4,8 +4,8 @@
  */
 package com.salon.salon.repository;
 
-import com.salon.salon.domain.Reserva;
+import com.salon.salon.domain.Queja;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ReservaRepository extends JpaRepository<Reserva, Long> {
+public interface QuejaRepository extends JpaRepository<Queja, Long> {
 }

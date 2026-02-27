@@ -23,16 +23,14 @@
                 Servicios
             </a>
 
-            <!-- 🔥 CORREGIDO -->
-            <a class="btn btn-outline-light" th:href="@{/reservas/listado}">
-                Reservas
+            <a class="btn btn-outline-light" th:href="@{/quejas}">
+                Quejas
             </a>
         </div>
     </div>
 </nav>
 
 <div class="container mt-4">
-    <!-- Renderiza el contenido de cada página -->
     <div th:replace="${contenido}"></div>
 </div>
 

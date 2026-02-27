@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="layout/base :: layout(~{::body})">
+
+<body>
+
+<h2>Nueva Queja</h2>
+
+<form th:action="@{/quejas/guardar}"
+      th:object="${queja}"
+      method="post">
+
+    <div class="mb-3">
+        <label>Nombre Cliente</label>
+        <input type="text"
+               class="form-control"
+               th:field="*{nombreCliente}" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Descripción</label>
+        <textarea class="form-control"
+                  th:field="*{descripcion}" required></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label>Servicio</label>
+        <select class="form-control"
+                th:field="*{servicio}">
+            <option th:each="s : ${servicios}"
+                    th:value="${s.id}"
+                    th:text="${s.nombre}">
+            </option>
+        </select>
+    </div>
+
+    <button class="btn btn-success">Guardar</button>
+    <a class="btn btn-secondary" th:href="@{/quejas}">Volver</a>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="layout/base :: layout(~{::body})">
+
+<body>
+
+<h2>Lista de Quejas</h2>
+
+<a class="btn btn-primary mb-3" th:href="@{/quejas/nueva}">
+    Nueva Queja
+</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Descripción</th>
+            <th>Servicio</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="q : ${quejas}">
+            <td th:text="${q.id}"></td>
+            <td th:text="${q.nombreCliente}"></td>
+            <td th:text="${q.descripcion}"></td>
+            <td th:text="${q.servicio.nombre}"></td>
+            <td>
+                <a class="btn btn-danger btn-sm"
+                   th:href="@{'/quejas/eliminar/' + ${q.id}}">
+                   Eliminar
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
